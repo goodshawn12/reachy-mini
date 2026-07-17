@@ -2,15 +2,40 @@
 
 Personal collection of Python scripts for [Reachy Mini](https://github.com/pollen-robotics/reachy_mini) (Lite, USB-connected).
 
-## Setup
+## Setup (macOS)
+
+Follows the [official installation guide](https://huggingface.co/docs/reachy_mini/SDK/installation).
+
+### 1. Prerequisites
+
+- **Python 3.10–3.12** (this repo targets 3.12)
+- **Homebrew**, **git**, **git-lfs**
+- **[uv](https://docs.astral.sh/uv/)** — fast Python package/venv manager
 
 ```bash
-python3 -m venv reachy_mini_env
-source reachy_mini_env/bin/activate
-pip install -r requirements.txt
+# Homebrew (skip if already installed)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# git + git-lfs
+brew install git git-lfs
+git lfs install
+
+# uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+uv python install 3.12 --default
 ```
 
-The Reachy Mini daemon must be running and the robot connected before running any script.
+### 2. Virtual environment + SDK
+
+```bash
+uv venv reachy_mini_env --python 3.12
+source reachy_mini_env/bin/activate
+uv pip install -r requirements.txt
+```
+
+> `requirements.txt` pins `reachy_mini` and `opencv-python<5` — see Notes below.
+
+The Reachy Mini daemon must be running and the robot connected (USB, Lite) before running any script.
 
 ## Scripts
 
