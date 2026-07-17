@@ -1,0 +1,17 @@
+# Virtual environment
+reachy_mini_env/
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Local agent session notes (personal, machine-specific)
+agents.local.md
+plan.md
+
+# Reference apps cloned outside the repo (~/reachy_mini_resources), not tracked here
+
+# OS
+.DS_Store
